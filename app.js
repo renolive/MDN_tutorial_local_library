@@ -15,7 +15,7 @@ var wikiRouter = require('./routes/wiki');
 
 
 // MongoDB setup
-const mongoDB = 'mongodb://renolive:R3natoao@ds225010.mlab.com:25010/local_library';
+const mongoDB = process.env.MONGODB_URI || 'mongodb://renolive:R3natoao@ds225010.mlab.com:25010/local_library';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
